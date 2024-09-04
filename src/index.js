@@ -112,7 +112,10 @@ class LinkedList {
     }
 
     insertAt(value, index) {
-        if (this.#head == null) return "List is Empty!";
+        if (this.#head == null) {
+            this.prepend(value);
+            return;
+        }
         if (index < 0 || index > this.size) {
             return `index should be between 0 and ${this.size}`;
         }
