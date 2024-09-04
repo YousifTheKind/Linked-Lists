@@ -104,11 +104,11 @@ class LinkedList {
         let temp = this.#head;
 
         while (temp !== null) {
-            stringList = stringList + `( ${temp.value} ) -> `;
+            stringList += `( ${temp.value} ) -> `;
             temp = temp.nextNode;
         }
 
-        return stringList + "null";
+        return (stringList += null);
     }
 
     insertAt(value, index) {
