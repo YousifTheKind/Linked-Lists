@@ -1,2 +1,4 @@
-list.append("sh");
-// list.prepend("cats");
+list.pop();
+console.log("-------------------------------");
+
+console.log(list.getList);

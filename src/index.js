@@ -54,20 +54,40 @@ class LinkedList {
             }
         }
     }
+
+    pop() {
+        let prev = null;
+        let curr = this.#head;
+        while (curr.nextNode != null) {
+            prev = curr;
+            curr = curr.nextNode;
+        }
+        prev.nextNode = curr.nextNode;
+    }
+
+    removeAt(index) {}
+
+    get getList() {
+        return this.#list;
+    }
 }
 
 class Node {
-    value = null;
-    nextNode = null;
-
     constructor(value, nextNode) {
-        this.value = value;
-        this.nextNode = nextNode;
+        if (!value) this.value = null;
+        else this.value = value;
+
+        if (!nextNode) this.nextNode = null;
+        else this.nextNode = nextNode;
     }
 }
 
 const list = new LinkedList();
 list.append("ss");
-// list.append("sh");
-// list.prepend("cats");
-console.log(list.at(0));
+list.append("sh");
+list.prepend("cats");
+console.log(list.tail);
+list.pop();
+console.log("-------------------------------");
+
+console.log(list.getList);
